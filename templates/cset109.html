@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSET109 | Course Resources</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background-color: #111;
+      color: white;
+      padding: 20px 40px;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .folders {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      padding: 40px;
+      justify-content: center;
+    }
+
+    .folder-card {
+      background-color: #fff;
+      padding: 30px;
+      width: 300px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .folder-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .folder-card h3 {
+      margin: 0;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+<header>CSET109: Object Oriented Programming using Java</header>
+
+<div class="folders">
+  <div class="folder-card" onclick="window.location.href='/cset109/tutorials'">
+    <h3>Tutorial Sheets</h3>
+  </div>
+  <!--
+  <div class="folder-card">
+    <h3>Previous Year Question Papers</h3>
+  </div>
+  for when pyqs are available
+-->
+  <div class="folder-card" onclick="window.location.href='/cset109/ppts'">
+    <h3>Course PPTs</h3>
+  </div>  
+
+  
+</div>
+
+</body>
+</html>

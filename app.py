@@ -43,7 +43,7 @@ def cset109_tutorials():
     return render_template('cset109_tutorials.html', tutorial_count=14)
 
 @app.route('/uploads/cset109/tutorials/<filename>')
-def download_tutorial(filename):
+def download_cset109_tutorial(filename):
     tutorial_path = os.path.join(UPLOAD_FOLDER, 'cset109', 'tutorials')
     return send_from_directory(tutorial_path, filename, as_attachment=True)
 
@@ -53,10 +53,32 @@ def cset109_ppts():
     return render_template('cset109_ppts.html', ppt_count=13)
 
 @app.route('/uploads/cset109/ppts/<filename>')
-def download_ppt(filename):
+def download_cset109_ppt(filename):
     ppt_path = os.path.join(UPLOAD_FOLDER, 'cset109', 'ppts')
     return send_from_directory(ppt_path, filename, as_attachment=True)
 
+@app.route('/cset102')
+def cset102():
+    return render_template('cset102.html')
+
+@app.route('/cset102/pdfs')
+def cset102_pdfs():
+    print("✅ Entered /cset102/pdfs route")
+    return render_template('cset102_pdfs.html', pdf_count=12)
+
+@app.route('/uploads/cset102/ppts/<filename>')
+def download_cset102_pdf(filename):
+    pdf_path = os.path.join(UPLOAD_FOLDER, 'cset102', 'pdfs')
+    return send_from_directory(pdf_path, filename, as_attachment=True)
+
+@app.route('/cset102/tutorials')
+def cset102_tutorials():
+    return render_template('cset102_tutorials.html', tutorial_count=10)
+
+@app.route('/uploads/cset102/tutorials/<filename>')
+def download_cset102_tutorial(filename):
+    tutorial_path = os.path.join(UPLOAD_FOLDER, 'cset102', 'tutorials')
+    return send_from_directory(tutorial_path, filename, as_attachment=True)
 
 if __name__ == '__main__':
     app.run(debug=True)

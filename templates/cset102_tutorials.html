@@ -1,0 +1,83 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSET102 Tutorials</title>
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #111;
+      color: white;
+      padding: 20px 40px;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .info-note {
+      max-width: 900px;
+      margin: 20px auto 0;
+      padding: 16px 24px;
+      background-color: #fff5d1;
+      border-left: 5px solid #f4b400;
+      font-size: 15px;
+      color: #333;
+      border-radius: 8px;
+    }
+
+    .tutorials-container {
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .tutorial-row {
+      background: white;
+      padding: 20px;
+      border-radius: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .tutorial-row span {
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .tutorial-row a {
+      text-decoration: none;
+      color: white;
+      background-color: #28d17c;
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+<header>CSET102: Tutorial Sheets</header>
+
+
+<div class="tutorials-container">
+  {% for i in range(1, tutorial_count + 1) %}
+  <div class="tutorial-row">
+    <span>Tutorial Sheet {{ i }}</span>
+    <div>
+      <a href="{{ url_for('download_cset102_tutorial', filename='Tutorial' ~ i ~ '.pdf') }}">Download Sheet</a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+</body>
+</html>
